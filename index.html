@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+<style>
+  html, body {
+    font-family: 'Roboto', 'sans-serif';
+  }
+  div {
+    width:100%;
+    display:block;
+    margin:0;
+    padding:0;
+    text-align:center;
+  }
+</style>
+
+<body>
+  <div>
+    <h2>Cantidad de Actas por Tecnico</h2>
+    <label>Ingrese su cedula: </label>
+    <input type="text"; placeholder="8-888-8888"; size="9px", id="cedula">
+    <br>
+    <br>
+    <label>Seleccione el mes: </label>
+    <input list="months"; size="10px"; id="month">
+    <datalist id="months">
+      <!-- <option value="Enero"; data-val="1">
+        <option value="Febrero"; data-val="2">
+        <option value="Marzo"; data-val="3">--> 
+        <option value="Abril"; data-val="4">
+    </datalist>
+    <br>
+    <br>
+    <input type="button" value="Consultar" onclick="actasfinal()">
+  </div>
+    <script>
+
+      var dict = new Object();
+
+      var dict = {
+        "tec1":{
+          "4-775-799": ["Yelsin Guerra Candanedo", dict2 = {"Abril":38}],
+
+          "8-960-215": ["Yelena Mendoza", dict2 = {"Abril":22}],
+
+          "8-1003-1373": ["William Campbell", dict2 = {"Abril":9}],
+
+          "5-716-1351": ["Walkerson Valencia", dict2 = {"Abril":6}],
+
+          "8-968-880": ["Ruben Vergara", dict2 = {"Abril":33}],
+
+          "8-979-455": ["Ricardo Alberto Jaime Claros", dict2 = {"Abril":2}],
+
+          "8-1019-1061": ["Reynaldo Carpintero", dict2 = {"Abril":33}],
+          
+          "8-960-215": ["Patrick Xavier Abrego Castro", dict2 = {"Abril":20}],
+
+          "8-933-1283": ["Owen Melgarejo", dict2 = {"Abril":18}],
+
+          "8-978-1725": ["Osias Villareal Valdes", dict2 = {"Abril":41}],
+
+          "8-1015-1404": ["Oscar Camarena", dict2 = {"Abril":11}],
+
+          "8-981-1213": ["Milagro Gonzalez Rodriguez", dict2 = {"Abril":42}],
+
+          "8-780-2416": ["Marcos Guevara", dict2 = {"Abril":34}],
+
+          "8-998-1074": ["Luis Gonzalez Ruiz", dict2 = {"Abril":18}],
+
+          "8-970-783": ["Leonardo Morales Soto", dict2 = {"Abril":33}],
+
+          "8-1010-821": ["Kevin Vegas", dict2 = {"Abril":16}],
+
+          "8-970-783": ["Leonardo Morales Soto", dict2 = {"Abril":33}],
+
+          "8-1010-821": ["Kevin Vegas", dict2 = {"Abril":16}],
+
+          "8-1002-944": ["Kevin Caballero", dict2 = {"Abril":8}],
+
+          "8-1009-2262": ["Kalef Marin", dict2 = {"Abril":32}],
+          
+          "8-982-2193": ["Justin Castro", dict2 = {"Abril":12}],
+
+          "8-931-176": ["Juan Sanchez Arauz", dict2 = {"Abril":24}],
+
+          "8-978-2271": ["Juan Lopez Nuñez", dict2 = {"Abril":32}],
+
+          "8-1011-84": ["Josue Zuñiga", dict2 = {"Abril":25}],
+
+          "2-736-742": ["Josthy Antonio Rodriguez Rodriguez", dict2 = {"Abril":28}],
+
+          "8-1016-2287": ["Jose Torres", dict2 = {"Abril":18}],
+
+          "8-895-181": ["Jose Gonzalez", dict2 = {"Abril":2}],
+
+          "8-970-3": ["Jose Carofiles Arguelles", dict2={"Abril":39}],
+
+          "8-1001-2236": ["Jorgue Gibbs", dict2 = {"Abril":2}],
+
+          "9-759-523": ["Jesus Otero", dict2={"Abril":10}],
+
+          "8-974-1024": ["Jesus Boothe Quintero", dict2 = {"Abril":10}],
+
+          "8-956-1760": ["Javier Morales", dict2={"Abril":14}],
+
+          "8-973-1455": ["Jased Diaz Henriquez", dict2 = {"Abril":34}],
+
+          "8-975-1553": ["Jafeth Perez Alvarado", dict2 = {"Abril":38}],
+
+          "8-989-1641": ["Humberto Echevers", dict2 = {"Abril":25}],
+          
+          "8-1040-1478": ["Hector Vega", dict2 = {"Abril":21}],
+
+          "8-1008-462": ["Hector Trujillo", dict2 = {"Abril":4}],
+
+          "8-875-1630": ["Hector Rodriguez Rodriguez", dict2 = {"Abril":27}],
+
+          "8-964-678": ["Giscard Francisco Barria Paz", dict2 = {"Abril":6}],
+
+          "8-1019-2074": ["German Joaquin Garcia", dict2 = {"Abril":15}],
+
+          "8-992-765": ["Erick Alveo Ruiz", dict2 = {"Abril":29}],
+
+          "8-960-203": ["Elvis Pitty Sanchez", dict2 = {"Abril":13}],
+
+          "8-1016-1513": ["Elian Gonzalez", dict2 = {"Abril":18}],
+
+          "8-946-665": ["Edwin Bustamante", dict2 = {"Abril":5}],
+
+          "8-1016-1513": ["Edinson Rivas Garrido", dict2 = {"Abril":34}],
+   
+          "8-719-2235": ["Donaldo Humberto Rojas Salgado", dict2 = {"Abril":29}],
+
+          "2-741-2246": ["Cristian Castro", dict2 = {"Abril":25}],
+
+          "5-714-2204": ["Ariel Perea", dict2 = {"Abril":22}],
+
+          "8-970-236": ["Anthony Santos Zambrano", dict2 = {"Abril":2}],
+
+          "8-1029-309": ["Angel Abadia Carrasquilla", dict2 = {"Abril":12}],
+
+          "8-976-192": ["Alfredo Puchicama", dict2 = {"Abril":23}],
+
+          "8-967-2379": ["Alexis Abdiel Castillo Martinez", dict2 = {"Abril":1}],
+
+          "8-983-1355": ["Alex Castro Morales", dict2 = {"Abril":29}],
+
+          "8-887-2199": ["AMenacho", dict2 = {"Abril":29}],
+
+          /*"Abril": 30,*/
+          
+        },
+
+      }
+
+      console.log(dict["tec1"]["8-975-1553"][0]);
+      console.log(dict["tec1"]["8-975-1553"][1]["Abril"])
+      var cedula = document.getElementById('cedula');
+
+      function mes(){
+        var mes = $('#month').val();
+        console.log(mes); 
+        /*document.write(mes);*/
+    }
+
+      //function actas(){
+
+        /*var mes = $('#month').val();
+        if(document.getElementById('cedula').value == '8-887-2199'){
+            /*console.log("Tecnico: Adan Menacho");*/
+
+            //document.write(document.getElementById('cedula').value);
+            
+            //document.write("<br>", mes);
+        //}
+        //else{
+          //console.log("Tecnico no existe");
+        //}
+        
+      //}
+      
+      function actas(){
+
+      }
+
+
+      function actasfinal(){
+
+        var mes = $('#month').val();
+        try{
+          document.write("<p style='font-size: 18px'> Técnico: "+"<b>"+dict["tec1"][document.getElementById('cedula').value][0]+"</b>"+"</p>",
+          "<p style='font-size: 18px'>Cantidad de actas en ", mes,": " ,"<b>"+ dict["tec1"][document.getElementById('cedula').value][1][mes]+"</b>"
+            +"<p style='font-style: italic'>última actualización: 26/4/2023</p>");
+        }
+
+        catch {
+
+        }
+
+      }
+
+    </script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  </body>
+
+</html>
